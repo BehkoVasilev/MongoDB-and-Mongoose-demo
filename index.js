@@ -6,9 +6,17 @@ const catSchema = new mongoose.Schema({
     breed: String
 });
 
+// add method
 catSchema.methods.sayMeow = function () {
-    console.log(`${this.name} is ${this.age} years old - Meow...`);
+    console.log(`${this.name} - Meow...`);
 };
+
+// Virtual property
+catSchema.virtual('info').get(function() {
+    console.log(`${this.name} - ${this.age} age, ${this.breed}.`);
+});
+
+
 
 const Cat = mongoose.model('Cat', catSchema);
 
@@ -21,7 +29,10 @@ async function main() {
     // await createCat("Misho", 4, "streetcat")
 
     const cats = await readCats();
-    cats.forEach(cat => cat.sayMeow());
+    cats.forEach(cat => {
+        cat.sayMeow(),
+        cat.info 
+    });
 
 };
 
