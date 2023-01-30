@@ -13,7 +13,7 @@ const catSchema = new mongoose.Schema({
     breed: {
         type: String,
         enum: {
-            values: ['himalayan', 'korat', 'angora', 'persian', 'streetcat', 'abyssinian'],
+            values: ['himalayan', 'korat', 'angora', 'persian', 'streetcat', 'abyssinian', 'Himalayan', 'Korat', 'Angora', 'Persian', 'Streetcat', 'Abyssinian'],
             message: `{VALUE} - not listed.`
         }
     },
