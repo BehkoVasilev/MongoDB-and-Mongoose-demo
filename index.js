@@ -33,7 +33,7 @@ async function main() {
     //     .where('age')
     //     .gt(7)
     //     .lt(16)
-    const findCat = await Cat.find({ age: { $gt: 4, $lt: 16 } });
+    const findCat = await Cat.find({ age: { $gt: 4, $lt: 16 } }).sort({age:-1});
     console.log(findCat);
 };
 
